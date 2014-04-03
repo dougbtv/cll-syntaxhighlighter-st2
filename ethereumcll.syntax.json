@@ -4,6 +4,15 @@
 	"fileTypes": ["cll"],
 	"uuid": "478daf6a-0ade-445a-ade6-017317a19319",
 	"patterns": [
+	      { 
+	        "name": "comment.block.cll",
+	        "begin": "/\\*",
+	        "end": "\\*/",
+	        "captures": {
+	            "0": { "name": "punctuation.definition.comment.cll" }
+	         },
+	        "comment": "block comments"
+	      },
 	        { "match": "(contract|tx|block)\\.([A-Za-z][A-Za-z0-9_]+)",
 	        "name": "keyword.cll",
 	        "captures": {
@@ -26,7 +35,7 @@
 	         },
 	        "comment": "double slash comments"
 	      },
-	      { "match": "(if|elif|stop|while|else|\\#define|\\%|/|=|==|>|>=|<=|\\+|\\-|\\*|\\^|\\:)",
+	      { "match": "(if|elif|stop|while|else|def|\\#define|\\%|/|=|==|>|>=|<=|\\+|\\-|\\*|\\^|\\:)",
 	        "name": "keyword.control.cll",
 	        "captures": {
 	            "1": { "name": "keyword.control.cll" }
@@ -51,6 +60,45 @@
 }
 
 /*
+
+<dict>
+	<key>begin</key>
+	<string>/\*</string>
+	<key>captures</key>
+	<dict>
+		<key>0</key>
+		<dict>
+			<key>name</key>
+			<string>punctuation.definition.comment.php</string>
+		</dict>
+	</dict>
+	<key>end</key>
+	<string>\*\/</string>
+	<key>name</key>
+	<string>comment.block.php</string>
+</dict>
+
+
+ 1 {  scopeName = 'source.untitled';
+ 2     fileTypes = ( );
+ 3     foldingStartMarker = '\{\s*$';
+ 4     foldingStopMarker = '^\s*\}';
+ 5     patterns = (
+ 6        {  name = 'keyword.control.untitled';
+ 7           match = '\b(if|while|for|return)\b';
+ 8        },
+ 9        {  name = 'string.quoted.double.untitled';
+10           begin = '"';
+11           end = '"';
+12           patterns = ( 
+13              {  name = 'constant.character.escape.untitled';
+14                 match = '\\.';
+15              }
+16           );
+17        },
+18     );
+19  }
+
 
 
 
